@@ -2,12 +2,23 @@ import { useState , useMemo } from "react";
 import { findPrime } from "../utils/helper.js";
 
 const Demo = () => {
+  
+  const getInitialState = () => {
+    const value = "Orange";
+    return value;
+  };
   const [text, setText] = useState(0);
   const [isDarkTheme, setIsDarkTheme] = useState(false);
+  const [value, setValue] = useState(getInitialState);
 
 
   const prime = useMemo(() => findPrime(text),[text]);
+  const handleChange = (e) => {
+    setValue(e.target.value);
+  };
 
+
+ 
   return (
     <div
       className={
@@ -33,6 +44,15 @@ const Demo = () => {
       </div>
       <div>
         <h1 className="mt-4 font-bold text-xl">nth Prime :{prime}</h1>
+        <div>
+      <select value={value} onChange={handleChange}>
+        <option value="Orange">Orange</option>
+        <option value="Radish">Radish</option>
+        <option value="Cherry">Cherry</option>
+      </select>
+      <p>{`You selected ${value}`}</p>
+    </div>
+
       </div>
     </div>
   );

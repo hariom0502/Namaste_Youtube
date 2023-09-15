@@ -18,7 +18,7 @@ const Head = () => {
         getSearchSuggestions();
       }
     }, 200);
-    
+
     return () => {
       clearTimeout(timer);
     };
@@ -57,7 +57,7 @@ const Head = () => {
         </a>
       </div>
       <div className="col-span-10 px-10 ">
-        <div>
+        <div className="flex">
           <input
             className="px-5 w-1/2 border border-gray-400 p-2 rounded-l-full"
             type="text"
@@ -69,7 +69,15 @@ const Head = () => {
           <button className="border border-gray-400 py-2 rounded-r-full px-5 bg-gray-100">
             🔍
           </button>
+          
+            <img
+              className="h-8 m-5 border round hover:"
+              alt="mic"
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHwAAAB8CAMAAACcwCSMAAAAYFBMVEX///8AAABxcXGXl5dmZmbu7u4aGhr39/f8/Py2trbh4eG9vb3x8fHp6ekiIiLMzMxNTU2srKzDw8Ojo6NZWVl8fHzb29sxMTE5OTlHR0fU1NSJiYlSUlIREREqKipCQkIRTwJDAAADb0lEQVRoge2bW7uqIBCGIzNExTx2MFf9/3+5thxE3Zo4gq0LvqvsSV+FgRlnpsPBycnpLyugdVR4XpbXdG9y/WwSJJSU3jXYD01SNFJDdsJHtzG61S3aAR2XU+hWZWybffmZYyP0c7HLJvPoVuSLbKv0yxIbIWsj7y+zEfItwR868Icd9uKEc1mZdpwsg1sl2AK80GMjVJhn47su/G7+0TWWmVRuHF7pw4+m2fitD7+b9jBXfTZCV8PwaA3ctGvXXmitPMPw5xp4ZRi+wtjNm/vRwR3cwR3cwR3cwR3cwR3cwf8mPMgzguFwTLIcnA/229fiVwiFh69/Hx/Q12We4n1jGFy80ZfABxeXqmHwWhzAsoKhODuCweUbfQiCU3F2thrOXpEzcQArwcTibJZXW/V+zpIDMp0As7igf6lsDjSlrH+7wMUmigpsBvM1cJb3PvHPPzD2QdSQmvbew7M+O2ltLGj4QQqEi1TImfbuREdN+3sq7haan5HzzNaapw9nFipXWgaEy8Qfm/RwDvW/2MqWaxOcEBQZ9hdbLSdd9qn9dfziBwmU3fHYuGunnZmty1E/geHyCsyCDrOlxKG4J2n69w1Sl+BnvoXO4YZia0N6lS2Jf7lL8afRyr8Wg1F6wtnKxHnxQMPm+Bx3+yHMpQnJBcOHL17caVK2MLrp2hbMybkTG5W/UG9488ihyxLXm+DKj/OdCjfTVK6Gm1fnAbemvnF3ZbFoPjh2YV2qKLG5xtWZuCzN5zND/xYVLVXeN1DYVHuLoONiomniVoiIRW2E8M1NiaoaqtyuYjIqKD+IDJbUmL+MFLN7QYzaMyipUuaxz2lFVIzYswhDZfxe7fo+vCQemtSlV281Vt7q76vV7KYV9otA0BhigX6uppqRgmvVj/KMVtaGkXOZ0QE/oNnQ3xouoY/Lme+qyEMaxzTMi2q88o13KlHt8DW10KMWaMavnp3+sKtGIFWaLl93CqKFsU8jq21x+YdOnYf5ZomxQm+6Gc/bFDLpyyfHtNeyk6RHYqslalIBpsL8Sor3a7/sJGJZE27bwR3cwR3cwR38K/DAl5Lw7gvbnhV7yVlKxhLdF4lno9lXaaEnz3QL4ED1Z/bmDNBHfbOzf7nYYTN4jiejZqWb1X+TXD42uSeW/0viZ96ssl2DdycnJ139AuULKH0dkoSUAAAAAElFTkSuQmCC"
+            />
+          
         </div>
+
         {showSuggestions && (
           <div className="absolute py-2 px-5 bg-white w-[30.8rem] shadow-lg rounded-lg border border-gray-100">
             <ul>
@@ -82,6 +90,7 @@ const Head = () => {
           </div>
         )}
       </div>
+
       <div className="col-span-1">
         <img
           className="h-8"

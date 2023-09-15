@@ -1,0 +1,68 @@
+Steps
+Npx create-react-app my-app 
+cd my-app
+npm start 
+
+tailwind css
+npm i -D tailwindcss 
+npm tailwind init -
+        creates a config file, which file tailwind is applicable content: ["./src/**/*.{html,js}"],
+    Gives in App.css file
+        @tailwind base;
+        @tailwind components;
+        @tailwind utilities;   
+
+rafce- Creates a component faster
+
+Redux
+npm i @reduxjs/toolkit 
+npm i react-redux 
+
+create slice- 
+import { createSlice } from "@reactjs/toolkit";
+const appSlice = createSlice({
+  name: "",
+  initialState: {},
+  reducers: {},
+  },
+});
+export const {toggleMenu}=appSlice.action;
+export default appSlice.reducer;
+
+
+create store- 
+import {configureStore} from "@reduxjs/toolkit"
+import appSlice from "./appSlice"
+const store=configureStore({
+reducer:{
+    app: appSlice,
+}
+})
+export default store;
+
+Provide store to app using <Provider></Provider>
+
+Routing
+npm i react-router-dom
+
+Debouncing
+Debouncing is removing unwanted input noise from buttons, switches or other user input. Debouncing prevents extra activations or slow functions from triggering too often. Debouncing is used in hardware switches, programs and websites.
+
+Debouncing with 200 ms 
+  -If difference between 2 key strokes is less 200 ms then decline Api call
+  ->200 ms make an api call , and show the result
+
+What is LRU in cache?
+A Least Recently Used (LRU) Cache organizes items in order of use, allowing you to quickly identify which item hasn't been used for the longest amount of time.
+
+
+Data (Live)-->>
+1.Web shockets- The WebSocket API is an advanced technology that makes it possible to open a two-way interactive communication session between the user's browser and a server. With this API, you can send messages to a server and receive event-driven responses without having to poll the server for a reply.
+2.Api polling: Polling, is one way to accomplish this, and all it is, is simply hitting an API's endpoint to retrieve any new data at a set interval of time.
+
+if app is time critical use Web Socket and when not use Api polling
+
+useMemo is a React Hook that lets you cache the result of a calculation between re-renders.
+useCallback is a React Hook that lets you cache a function definition between re-renders.
+
+useRef is a React Hook that lets you reference a value that’s not needed for rendering.
